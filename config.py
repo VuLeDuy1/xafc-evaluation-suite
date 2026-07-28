@@ -19,7 +19,7 @@ PROMPT_FILE_PATH = os.path.join(PROJECT_ROOT, 'prompts', 'fides_score_judge.txt'
 # --- Evaluation Parameters ---
 # Set to a small integer for testing, or None to process all rows.
 # WARNING: Processing all rows can be time-consuming and costly.
-MAX_ROWS_TO_PROCESS: int | None = 5
+MAX_ROWS_TO_PROCESS: int | None = None
 CONFIDENCE_THRESHOLD: float = 6.0  # Scores < 6.0 are considered "non-compliant" (label 1)
 
 # --- LLM-as-a-Judge Configuration ---
