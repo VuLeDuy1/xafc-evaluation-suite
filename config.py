@@ -6,15 +6,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # --- Core File & Directory Paths ---
-# Assumes data is placed in a sibling 'data' directory.
-# Example: project_root/data/your_data.csv
-DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
+# Resolve paths relative to the project root so the suite finds its data and prompt files.
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(PROJECT_ROOT, 'data')
 CSV_FILE_NAME = "Llama-3.3-70B-Instruct-Turbo-Free (2).csv"
-JSON_FILE_NAME = ""
+JSON_FILE_NAME = "Qwen2.5-7B-Instruct-Turbo_20260728_142309_output.json"
 CSV_FILE_PATH = os.path.join(DATA_DIR, CSV_FILE_NAME)
 JSON_FILE_PATH = os.path.join(DATA_DIR, JSON_FILE_NAME)
-RESULTS_DIR = os.path.join(os.path.dirname(__file__), 'results')
-PROMPT_FILE_PATH = os.path.join(os.path.dirname(__file__), 'prompts', 'fides_score_judge.txt')
+RESULTS_DIR = os.path.join(PROJECT_ROOT, 'results')
+PROMPT_FILE_PATH = os.path.join(PROJECT_ROOT, 'prompts', 'fides_score_judge.txt')
 
 # --- Evaluation Parameters ---
 # Set to a small integer for testing, or None to process all rows.
