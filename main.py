@@ -2,7 +2,7 @@
 import sys
 import logging
 import config
-from modules.data_loader import load_and_prepare_data
+from modules.data_loader import load_and_prepare_data_from_csv,load_and_prepare_data_from_json
 from modules.classification_analyzer import analyze_classification_performance
 from modules.explanation_evaluator import evaluate_explanations
 
@@ -14,13 +14,13 @@ def main():
     logging.info("🚀 LAUNCHING XAFC EVALUATION SUITE 🚀")
 
     # --- 1. Load and Prepare Data ---
-    df = load_and_prepare_data(config.CSV_FILE_PATH)
+    df = load_and_prepare_data_from_json(config.JSON_FILE_PATH)
     if df is None or df.empty:
         logging.error("Data loading failed or returned an empty DataFrame. Terminating.")
         sys.exit(1)
 
-    # --- 2. Classification Performance Analysis ---
-    analyze_classification_performance(df, config)
+    # # --- 2. Classification Performance Analysis ---
+    # analyze_classification_performance(df, config)
 
     # --- 3. Explanation Quality Analysis (LLM-as-a-Judge) ---
     if not config.OPENAI_API_KEY:

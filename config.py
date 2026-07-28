@@ -10,7 +10,9 @@ load_dotenv()
 # Example: project_root/data/your_data.csv
 DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
 CSV_FILE_NAME = "Llama-3.3-70B-Instruct-Turbo-Free (2).csv"
+JSON_FILE_NAME = ""
 CSV_FILE_PATH = os.path.join(DATA_DIR, CSV_FILE_NAME)
+JSON_FILE_PATH = os.path.join(DATA_DIR, JSON_FILE_NAME)
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), 'results')
 PROMPT_FILE_PATH = os.path.join(os.path.dirname(__file__), 'prompts', 'fides_score_judge.txt')
 
